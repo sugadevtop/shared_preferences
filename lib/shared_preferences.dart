@@ -15,7 +15,7 @@ import 'package:shared_preferences_platform_interface/shared_preferences_platfor
 class SharedPreferences {
   SharedPreferences._(this._preferenceCache);
 
-  static const String _prefix = 'flutter.';
+  static const String _prefix = '';
   static Completer<SharedPreferences> _completer;
 
   static SharedPreferencesStorePlatform get _store =>

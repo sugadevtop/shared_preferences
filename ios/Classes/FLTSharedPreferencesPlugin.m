@@ -72,9 +72,7 @@ static NSMutableDictionary *getAllPrefs() {
   NSMutableDictionary *filteredPrefs = [NSMutableDictionary dictionary];
   if (prefs != nil) {
     for (NSString *candidateKey in prefs) {
-      if ([candidateKey hasPrefix:@"flutter."]) {
-        [filteredPrefs setObject:prefs[candidateKey] forKey:candidateKey];
-      }
+      [filteredPrefs setObject:prefs[candidateKey] forKey:candidateKey];
     }
   }
   return filteredPrefs;
