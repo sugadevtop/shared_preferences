@@ -21,6 +21,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import android.preference.PreferenceManager;
 
 /**
  * Implementation of the {@link MethodChannel.MethodCallHandler} for the plugin. It is also
@@ -28,8 +29,6 @@ import java.util.Set;
  */
 @SuppressWarnings("unchecked")
 class MethodCallHandlerImpl implements MethodChannel.MethodCallHandler {
-
-  private static final String SHARED_PREFERENCES_NAME = "Hawk2";
 
   // Fun fact: The following is a base64 encoding of the string "This is the prefix for a list."
   private static final String LIST_IDENTIFIER = "VGhpcyBpcyB0aGUgcHJlZml4IGZvciBhIGxpc3Qu";
@@ -43,7 +42,7 @@ class MethodCallHandlerImpl implements MethodChannel.MethodCallHandler {
    * android.content.SharedPreferences} based on the {@code context}.
    */
   MethodCallHandlerImpl(Context context) {
-    preferences = context.getSharedPreferences(SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE);
+    preferences = PreferenceManager.getDefaultSharedPreferences(context);
   }
 
   @Override
