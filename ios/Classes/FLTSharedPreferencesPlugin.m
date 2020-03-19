@@ -5,6 +5,7 @@
 #import "FLTSharedPreferencesPlugin.h"
 
 static NSString *const CHANNEL_NAME = @"plugins.flutter.io/shared_preferences";
+static NSString *const NUSA_STORAGE = @"sg.storage";
 
 @implementation FLTSharedPreferencesPlugin
 
@@ -67,8 +68,7 @@ static NSString *const CHANNEL_NAME = @"plugins.flutter.io/shared_preferences";
 #pragma mark - Private
 
 static NSMutableDictionary *getAllPrefs() {
-  NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
-  NSDictionary *prefs = [[NSUserDefaults standardUserDefaults] persistentDomainForName:appDomain];
+  NSDictionary *prefs = [[NSUserDefaults standardUserDefaults] persistentDomainForName:NUSA_STORAGE];
   NSMutableDictionary *filteredPrefs = [NSMutableDictionary dictionary];
   if (prefs != nil) {
     for (NSString *candidateKey in prefs) {
