@@ -19,7 +19,7 @@ import 'package:shared_preferences_platform_interface/method_channel_shared_pref
 class SharedPreferences {
   SharedPreferences._(this._preferenceCache);
 
-  static const String _prefix = 'flutter.';
+  static const String _prefix = '';
   static Completer<SharedPreferences> _completer;
   static bool _manualDartRegistrationNeeded = true;
 
