@@ -19,7 +19,7 @@ import 'package:shared_preferences_windows/shared_preferences_windows.dart';
 class SharedPreferences {
   SharedPreferences._(this._preferenceCache);
 
-  static const String _prefix = 'flutter.';
+  static const String _prefix = '';
   static Completer<SharedPreferences>? _completer;
   static bool _manualDartRegistrationNeeded = true;
 
